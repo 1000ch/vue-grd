@@ -15,9 +15,9 @@ $ npm install --save vue-grd
 ```html
 <template>
   <grid>
-    <cell width="fill">fill</cell>
-    <cell width="3of12">3of12</cell>
-    <cell width="3of12">3of12</cell>
+    <cell width="-fill">fill</cell>
+    <cell width="-3of12">3of12</cell>
+    <cell width="-3of12">3of12</cell>
   </grid>
 </template>
 
