@@ -1,4 +1,5 @@
 import vue from 'rollup-plugin-vue'
+import uglify from 'rollup-plugin-uglify'
 
 export default {
   input: 'src/index.ts',
@@ -13,6 +14,7 @@ export default {
   plugins: [
     vue({
       css: true
-    })
+    }),
+    uglify()
   ]
 }

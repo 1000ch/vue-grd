@@ -32,6 +32,7 @@
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "rollup": "^0.57.0",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "vue": "^2.5.16",
     "vue-class-component": "^6.2.0",
