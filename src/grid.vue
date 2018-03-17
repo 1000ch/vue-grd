@@ -1,13 +1,13 @@
 <template>
   <div
-    class="Cell"
+    class="Grid"
     v-bind:class="[fill, justify]">
   </div>
 </template>
 
 <script>
-const alignValues = ['top', 'middle', 'bottom', 'stretch', 'baseline']
-const justifyValues = ['left', 'center', 'right', 'between', 'around']
+const alignValues = ['-top', '-middle', '-bottom', '-stretch', '-baseline']
+const justifyValues = ['-left', '-center', '-right', '-between', '-around']
 
 export default {
   props: {
@@ -31,43 +31,43 @@ export default {
   flex-wrap: wrap;
 }
 
-.Grid.top {
+.Grid.\-top {
   align-items: flex-start;
 }
 
-.Grid.middle {
+.Grid.\-middle {
   align-items: center;
 }
 
-.Grid.bottom {
+.Grid.\-bottom {
   align-items: flex-end;
 }
 
-.Grid.stretch {
+.Grid.\-stretch {
   align-items: stretch;
 }
 
-.Grid.baseline {
+.Grid.\-baseline {
   align-items: baseline;
 }
 
-.Grid.left {
+.Grid.\-left {
   justify-content: flex-start;
 }
 
-.Grid.center {
+.Grid.\-center {
   justify-content: center;
 }
 
-.Grid.right {
+.Grid.\-right {
   justify-content: flex-end;
 }
 
-.Grid.between {
+.Grid.\-between {
   justify-content: space-between;
 }
 
-.Grid.around {
+.Grid.\-around {
   justify-content: space-around;
 }
 </style>
