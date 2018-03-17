@@ -2,6 +2,7 @@
   <div
     class="Cell"
     v-bind:class="width">
+    <slot></slot>
   </div>
 </template>
 

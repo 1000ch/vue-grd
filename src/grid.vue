@@ -2,6 +2,7 @@
   <div
     class="Grid"
     v-bind:class="[fill, justify]">
+    <slot></slot>
   </div>
 </template>
 
