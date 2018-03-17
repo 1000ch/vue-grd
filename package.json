@@ -2,7 +2,11 @@
   "name": "vue-grd",
   "version": "0.0.0",
   "description": "Vue port of grd, a CSS grid framework using flexbox.",
-  "main": "src/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "webpack"
+  },
+  "main": "dist/index.js",
   "lint-staged": {
     "*.@(vue|js)": [
       "prettier --write",
@@ -23,8 +27,13 @@
   },
   "homepage": "https://github.com/1000ch/vue-grd#readme",
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "vue-loader": "^14.2.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }
