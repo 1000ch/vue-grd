@@ -1,13 +1,14 @@
 <template>
-  <div
-    class="Cell"
-    v-bind:class="width">
+  <div class="Cell" v-bind:class="width">
     <slot></slot>
   </div>
 </template>
 
-<script>
-const widthValues = [
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+const widthValues: Array<String> = [
   '-fill',
   '-1of12',
   '-2of12',
@@ -23,18 +24,19 @@ const widthValues = [
   '-12of12'
 ]
 
-export default {
+@Component({
   props: {
     width: {
       default: 'fill',
       type: String,
-      validator: value => widthValues.includes(value)
+      validator: (value: String) => widthValues.indexOf(value) !== -1
     }
   }
-}
+})
+export default class Cell extends Vue {}
 </script>
 
-<style>
+<style scoped>
 .Cell {
   box-sizing: border-box;
   flex-shrink: 0;

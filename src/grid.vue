@@ -1,29 +1,44 @@
 <template>
-  <div
-    class="Grid"
-    v-bind:class="[fill, justify]">
+  <div class="Grid" v-bind:class="[fill, justify]">
     <slot></slot>
   </div>
 </template>
 
-<script>
-const alignValues = ['-top', '-middle', '-bottom', '-stretch', '-baseline']
-const justifyValues = ['-left', '-center', '-right', '-between', '-around']
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
-export default {
+const alignValues: Array<String> = [
+  '-top',
+  '-middle',
+  '-bottom',
+  '-stretch',
+  '-baseline'
+]
+
+const justifyValues: Array<String> = [
+  '-left',
+  '-center',
+  '-right',
+  '-between',
+  '-around'
+]
+
+@Component({
   props: {
     fill: {
       default: 'stretch',
       type: String,
-      validator: value => alignValues.includes(value)
+      validator: (value: String) => alignValues.indexOf(value) !== -1
     },
     justify: {
       default: 'left',
       type: String,
-      validator: value => justifyValues.includes(value)
+      validator: (value: String) => justifyValues.indexOf(value) !== -1
     }
   }
-}
+})
+export default class Grid extends Vue {}
 </script>
 
 <style scoped>

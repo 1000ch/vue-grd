@@ -1,18 +1,18 @@
-const babel = require('rollup-plugin-babel')
-const vue = require('rollup-plugin-vue')
+import vue from 'rollup-plugin-vue'
 
-module.exports = {
-  input: 'src/index.js',
+export default {
+  input: 'src/index.ts',
   output: {
     file: 'dist/index.js',
     format: 'cjs'
   },
+  external: [
+    'vue',
+    'vue-class-component'
+  ],
   plugins: [
     vue({
       css: true
-    }),
-    babel({
-      exclude: 'node_modules/**'
     })
   ]
 }

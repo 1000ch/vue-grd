@@ -3,12 +3,13 @@
   "version": "0.3.0",
   "description": "Vue port of grd, a CSS grid framework using flexbox.",
   "scripts": {
+    "precommit": "lint-staged",
     "prepublish": "npm run build",
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup --config rollup.config.js"
   },
   "main": "dist/index.js",
   "lint-staged": {
-    "*.@(vue|js)": [
+    "*.@(vue|ts)": [
       "prettier --write",
       "git add"
     ]
@@ -27,16 +28,13 @@
   },
   "homepage": "https://github.com/1000ch/vue-grd#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "rollup": "^0.57.0",
-    "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.2.0",
     "vue-template-compiler": "^2.5.16"
   }
 }
