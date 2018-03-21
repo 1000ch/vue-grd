@@ -14,7 +14,7 @@ $ npm install --save vue-grd
 
 ```html
 <template>
-  <grid>
+  <grid align="-stretch" justify="-left">
     <cell width="-fill">fill</cell>
     <cell width="-3of12">3of12</cell>
     <cell width="-3of12">3of12</cell>
@@ -35,7 +35,7 @@ export default {
 
 ### `<grid>` modifiers
 
-| Vertical layout | Description |
+| `align` | description |
 |---|---|
 | `-top` | Pull items to top |
 | `-middle` |  Pull items to middle |
@@ -43,7 +43,7 @@ export default {
 | `-stretch` | Stretch items |
 | `-baseline` |  Pull items to baseline |
 
-| Horizontal layout | Description |
+| `justify` | description |
 |---|---|
 | `-left` | Layout items to left |
 | `-center` | Layout items To center |
@@ -53,7 +53,7 @@ export default {
 
 ### `<cell>` modifiers
 
-| Cell width | Description |
+| `width` | description |
 |---|---|
 | `-fill` | Set item width to left |
 | `-1of12` | Set item width to 8.3% |
