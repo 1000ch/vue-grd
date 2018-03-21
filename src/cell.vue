@@ -1,24 +1,24 @@
 <template>
-  <div class="Cell" v-bind:class="width">
+  <div class="Cell" v-bind:class="computedWidth">
     <slot></slot>
   </div>
 </template>
 
 <script>
 const widthValues = [
-  '-fill',
-  '-1of12',
-  '-2of12',
-  '-3of12',
-  '-4of12',
-  '-5of12',
-  '-6of12',
-  '-7of12',
-  '-8of12',
-  '-9of12',
-  '-10of12',
-  '-11of12',
-  '-12of12'
+  'fill',
+  '1of12',
+  '2of12',
+  '3of12',
+  '4of12',
+  '5of12',
+  '6of12',
+  '7of12',
+  '8of12',
+  '9of12',
+  '10of12',
+  '11of12',
+  '12of12'
 ]
 
 export default {
@@ -28,6 +28,9 @@ export default {
       type: String,
       validator: value => widthValues.includes(value)
     }
+  },
+  computed: {
+    computedWidth: () => `-${this.width}`
   }
 }
 </script>

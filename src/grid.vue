@@ -1,24 +1,24 @@
 <template>
-  <div class="Grid" v-bind:class="[align, justify]">
+  <div class="Grid" v-bind:class="[computedAlign, computedJustify]">
     <slot></slot>
   </div>
 </template>
 
 <script>
 const alignValues = [
-  '-top',
-  '-middle',
-  '-bottom',
-  '-stretch',
-  '-baseline'
+  'top',
+  'middle',
+  'bottom',
+  'stretch',
+  'baseline'
 ]
 
 const justifyValues = [
-  '-left',
-  '-center',
-  '-right',
-  '-between',
-  '-around'
+  'left',
+  'center',
+  'right',
+  'between',
+  'around'
 ]
 
 export default {
@@ -33,6 +33,10 @@ export default {
       type: String,
       validator: value => justifyValues.includes(value)
     }
+  },
+  computed: {
+    computedAlign: () => `-${this.align}`,
+    computedJustify: () => `-${this.justify}`
   }
 }
 </script>
