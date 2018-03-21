@@ -8,7 +8,7 @@
   },
   "main": "dist/index.js",
   "lint-staged": {
-    "*.@(vue|js)": [
+    "*.{vue|js}": [
       "prettier --write",
       "git add"
     ]
