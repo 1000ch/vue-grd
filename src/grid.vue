@@ -24,12 +24,12 @@ const justifyValues = [
 export default {
   props: {
     align: {
-      default: 'stretch',
+      default: '-stretch',
       type: String,
       validator: value => alignValues.includes(value)
     },
     justify: {
-      default: 'left',
+      default: '-left',
       type: String,
       validator: value => justifyValues.includes(value)
     }
