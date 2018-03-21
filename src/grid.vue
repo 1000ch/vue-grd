@@ -1,14 +1,25 @@
 <template>
-  <div
-    class="Grid"
-    v-bind:class="[fill, justify]">
+  <div class="Grid" v-bind:class="[fill, justify]">
     <slot></slot>
   </div>
 </template>
 
 <script>
-const alignValues = ['-top', '-middle', '-bottom', '-stretch', '-baseline']
-const justifyValues = ['-left', '-center', '-right', '-between', '-around']
+const alignValues = [
+  '-top',
+  '-middle',
+  '-bottom',
+  '-stretch',
+  '-baseline'
+]
+
+const justifyValues = [
+  '-left',
+  '-center',
+  '-right',
+  '-between',
+  '-around'
+]
 
 export default {
   props: {
