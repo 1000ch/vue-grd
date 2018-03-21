@@ -1,8 +1,4 @@
-<template>
-  <div class="Grid" v-bind:class="[fill, justify]">
-    <slot></slot>
-  </div>
-</template>
+<template src="grid.html"></template>
 
 <script lang="ts">
 import Vue from 'vue'

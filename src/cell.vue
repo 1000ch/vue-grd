@@ -1,8 +1,4 @@
-<template>
-  <div class="Cell" v-bind:class="width">
-    <slot></slot>
-  </div>
-</template>
+<template src="cell.html"></template>
 
 <script lang="ts">
 import Vue from 'vue'
