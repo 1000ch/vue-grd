@@ -1,5 +1,5 @@
 <template>
-  <div class="Cell" v-bind:class="computedWidth">
+  <div class="Cell" :class="computedWidth">
     <slot></slot>
   </div>
 </template>

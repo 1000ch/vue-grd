@@ -1,5 +1,5 @@
 <template>
-  <div class="Grid" v-bind:class="[computedAlign, computedJustify]">
+  <div class="Grid" :class="[computedAlign, computedJustify]">
     <slot></slot>
   </div>
 </template>
