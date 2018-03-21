@@ -1,5 +1,5 @@
 <template>
-  <div class="Grid" v-bind:class="[fill, justify]">
+  <div class="Grid" v-bind:class="[align, justify]">
     <slot></slot>
   </div>
 </template>
@@ -23,7 +23,7 @@ const justifyValues = [
 
 export default {
   props: {
-    fill: {
+    align: {
       default: 'stretch',
       type: String,
       validator: value => alignValues.includes(value)
