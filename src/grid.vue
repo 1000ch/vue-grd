@@ -14,9 +14,9 @@ const alignValues = [
 ]
 
 const justifyValues = [
-  'left',
+  'start',
   'center',
-  'right',
+  'end',
   'between',
   'around'
 ]
@@ -29,7 +29,7 @@ export default {
       validator: value => alignValues.includes(value)
     },
     justify: {
-      default: '-left',
+      default: '-start',
       type: String,
       validator: value => justifyValues.includes(value)
     }
@@ -67,7 +67,7 @@ export default {
   align-items: baseline;
 }
 
-.Grid.\-left {
+.Grid.\-start {
   justify-content: flex-start;
 }
 
@@ -75,7 +75,7 @@ export default {
   justify-content: center;
 }
 
-.Grid.\-right {
+.Grid.\-end {
   justify-content: flex-end;
 }
 
