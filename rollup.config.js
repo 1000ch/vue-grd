@@ -1,7 +1,7 @@
-const babel = require('rollup-plugin-babel')
-const vue = require('rollup-plugin-vue')
+import babel from 'rollup-plugin-babel'
+import vue from 'rollup-plugin-vue'
 
-module.exports = {
+export default {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
