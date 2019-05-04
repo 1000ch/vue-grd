@@ -4,7 +4,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+
 const widthValues = [
   'fill',
   '1of12',
@@ -19,23 +21,25 @@ const widthValues = [
   '10of12',
   '11of12',
   '12of12'
-]
+];
 
-export default {
+export default Vue.extend({
   props: {
     width: {
       default: 'fill',
       type: String,
-      validator: value => widthValues.includes(value)
+      validator: (value: string) => widthValues.includes(value)
     }
   },
   computed: {
-    computedWidth: () => `-${this.width}`
+    computedWidth: function () {
+      return `-${this.width}`;
+    }
   }
-}
+});
 </script>
 
-<style>
+<style scoped>
 .Cell {
   box-sizing: border-box;
   flex-shrink: 0;

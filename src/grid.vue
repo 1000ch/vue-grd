@@ -4,14 +4,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+
 const alignValues = [
   'top',
   'middle',
   'bottom',
   'stretch',
   'baseline'
-]
+];
 
 const justifyValues = [
   'start',
@@ -19,26 +21,30 @@ const justifyValues = [
   'end',
   'between',
   'around'
-]
+];
 
-export default {
+export default Vue.extend({
   props: {
     align: {
-      default: '-stretch',
+      default: 'stretch',
       type: String,
-      validator: value => alignValues.includes(value)
+      validator: (value: string) => alignValues.includes(value)
     },
     justify: {
-      default: '-start',
+      default: 'start',
       type: String,
-      validator: value => justifyValues.includes(value)
+      validator: (value: string) => justifyValues.includes(value)
     }
   },
   computed: {
-    computedAlign: () => `-${this.align}`,
-    computedJustify: () => `-${this.justify}`
+    computedAlign: function() {
+      return `-${this.align}`;
+    },
+    computedJustify: function() {
+      return `-${this.justify}`;
+    }
   }
-}
+});
 </script>
 
 <style scoped>
