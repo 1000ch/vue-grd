@@ -11,7 +11,7 @@ const alignValues = [
   'bottom',
   'stretch',
   'baseline'
-]
+];
 
 const justifyValues = [
   'start',
@@ -19,7 +19,7 @@ const justifyValues = [
   'end',
   'between',
   'around'
-]
+];
 
 export default {
   props: {
@@ -35,10 +35,14 @@ export default {
     }
   },
   computed: {
-    computedAlign: () => `-${this.align}`,
-    computedJustify: () => `-${this.justify}`
+    computedAlign() {
+      return `-${this.align}`;
+    },
+    computedJustify() {
+      return `-${this.justify}`;
+    }
   }
-}
+};
 </script>
 
 <style scoped>

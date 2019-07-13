@@ -19,7 +19,7 @@ const widthValues = [
   '10of12',
   '11of12',
   '12of12'
-]
+];
 
 export default {
   props: {
@@ -30,9 +30,11 @@ export default {
     }
   },
   computed: {
-    computedWidth: () => `-${this.width}`
+    computedWidth() {
+      return `-${this.width}`;
+    }
   }
-}
+};
 </script>
 
 <style>
