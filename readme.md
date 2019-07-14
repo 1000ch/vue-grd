@@ -12,28 +12,40 @@ $ npm install --save vue-grd
 
 ## Usage
 
+You can use `<vue-grid>` and `<vue-cell>` components after importing and registering `VueGrid` and `VueCell`.
+
 ```html
 <template>
-  <grid align="stretch" justify="start">
-    <cell width="fill">fill</cell>
-    <cell width="3of12">3of12</cell>
-    <cell width="3of12">3of12</cell>
-  </grid>
+  <vue-grid align="stretch" justify="start">
+    <vue-cell width="fill">fill</vue-cell>
+    <vue-cell width="3of12">3of12</vue-cell>
+    <vue-cell width="3of12">3of12</vue-cell>
+  </vue-grid>
 </template>
 
 <script>
-import { Grid, Cell } from 'vue-grd'
+import { VueGrid, VueCell } from 'vue-grd';
 
 export default {
   components: {
-    Grid,
-    Cell
+    VueGrid,
+    VueCell
   }
-}
+};
 </script>
 ```
 
-### `<grid>` modifiers
+You can also register them as global components.
+
+```javascript
+import Vue from 'vue';
+import { VueGrid, VueCell } from 'vue-grd';
+
+Vue.component('vue-grid', VueGrid);
+Vue.component('vue-cell', VueCell);
+```
+
+### `<vue-grid>` modifiers
 
 | `align` | description |
 |---|---|
@@ -51,7 +63,7 @@ export default {
 | `between` | Add spaces between items |
 | `around` | Add spaces around items |
 
-### `<cell>` modifiers
+### `<vue-cell>` modifiers
 
 | `width` | description |
 |---|---|
