@@ -1,7 +1,7 @@
-import Grid from './grid.vue';
-import Cell from './cell.vue';
+import VueGrid from './grid.vue';
+import VueCell from './cell.vue';
 
 export default {
-  Grid,
-  Cell
+  VueGrid,
+  VueCell
 };
