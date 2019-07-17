@@ -1,6 +1,6 @@
 {
   "name": "vue-grd",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Vue port of grd, a CSS grid framework using flexbox.",
   "scripts": {
     "prepublishOnly": "npm run build",
