@@ -1,5 +1,5 @@
 <template>
-  <div class="Grid" :class="[computedAlign, computedJustify]">
+  <div class="VueGrid" :class="[computedAlign, computedJustify]">
     <slot></slot>
   </div>
 </template>
@@ -47,48 +47,48 @@ export default {
 </script>
 
 <style scoped>
-.Grid {
+.VueGrid {
   display: flex;
   flex-wrap: wrap;
 }
 
-.Grid.\-top {
+.VueGrid.\-top {
   align-items: flex-start;
 }
 
-.Grid.\-middle {
+.VueGrid.\-middle {
   align-items: center;
 }
 
-.Grid.\-bottom {
+.VueGrid.\-bottom {
   align-items: flex-end;
 }
 
-.Grid.\-stretch {
+.VueGrid.\-stretch {
   align-items: stretch;
 }
 
-.Grid.\-baseline {
+.VueGrid.\-baseline {
   align-items: baseline;
 }
 
-.Grid.\-start {
+.VueGrid.\-start {
   justify-content: flex-start;
 }
 
-.Grid.\-center {
+.VueGrid.\-center {
   justify-content: center;
 }
 
-.Grid.\-end {
+.VueGrid.\-end {
   justify-content: flex-end;
 }
 
-.Grid.\-between {
+.VueGrid.\-between {
   justify-content: space-between;
 }
 
-.Grid.\-around {
+.VueGrid.\-around {
   justify-content: space-around;
 }
 </style>

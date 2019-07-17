@@ -1,5 +1,5 @@
 <template>
-  <div class="Cell" :class="computedWidth">
+  <div class="VueCell" :class="computedWidth">
     <slot></slot>
   </div>
 </template>
@@ -39,62 +39,62 @@ export default {
 </script>
 
 <style>
-.Cell {
+.VueCell {
   box-sizing: border-box;
   flex-shrink: 0;
 }
 
-.Cell.\-fill {
+.VueCell.\-fill {
   width: 0;
   min-width: 0;
   flex-grow: 1;
 }
 
-.Cell.\-1of12 {
+.VueCell.\-1of12 {
   width: calc(100% * 1 / 12);
 }
 
-.Cell.\-2of12 {
+.VueCell.\-2of12 {
   width: calc(100% * 2 / 12);
 }
 
-.Cell.\-3of12 {
+.VueCell.\-3of12 {
   width: calc(100% * 3 / 12);
 }
 
-.Cell.\-4of12 {
+.VueCell.\-4of12 {
   width: calc(100% * 4 / 12);
 }
 
-.Cell.\-5of12 {
+.VueCell.\-5of12 {
   width: calc(100% * 5 / 12);
 }
 
-.Cell.\-6of12 {
+.VueCell.\-6of12 {
   width: calc(100% * 6 / 12);
 }
 
-.Cell.\-7of12 {
+.VueCell.\-7of12 {
   width: calc(100% * 7 / 12);
 }
 
-.Cell.\-8of12 {
+.VueCell.\-8of12 {
   width: calc(100% * 8 / 12);
 }
 
-.Cell.\-9of12 {
+.VueCell.\-9of12 {
   width: calc(100% * 9 / 12);
 }
 
-.Cell.\-10of12 {
+.VueCell.\-10of12 {
   width: calc(100% * 10 / 12);
 }
 
-.Cell.\-11of12 {
+.VueCell.\-11of12 {
   width: calc(100% * 11 / 12);
 }
 
-.Cell.\-12of12 {
+.VueCell.\-12of12 {
   width: 100%;
 }
 </style>
