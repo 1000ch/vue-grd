@@ -22,6 +22,7 @@ const justifyValues = [
 ];
 
 export default {
+  name: 'VueGrid',
   props: {
     align: {
       default: '-stretch',

@@ -22,6 +22,7 @@ const widthValues = [
 ];
 
 export default {
+  name: 'VueCell',
   props: {
     width: {
       default: 'fill',
