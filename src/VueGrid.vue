@@ -25,12 +25,12 @@ export default {
   name: 'VueGrid',
   props: {
     align: {
-      default: '-stretch',
+      default: 'stretch',
       type: String,
       validator: value => alignValues.includes(value)
     },
     justify: {
-      default: '-start',
+      default: 'start',
       type: String,
       validator: value => justifyValues.includes(value)
     }
