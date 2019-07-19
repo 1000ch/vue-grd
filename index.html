@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue-grd demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <style>
+      body {
+        font-family: menlo, monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div style="padding: 16px;">
+        &lt;vue-grid
+        <label>
+          align=<select @change="onChangeAlign">
+            <option v-for="align in aligns" :value="align">{{ align }}</option>
+          </select>
+        </label>
+        <label>
+          justify=<select @change="onChangeJustify">
+            <option v-for="justify in justifies" :value="justify">{{ justify }}</option>
+          </select>
+        </label>&gt;
+        <button @click="onClickAdd">Add a cell</button>
+        <button @click="onClickRemove">Remove a cell</button>
+      </div>
+      <vue-grid :align="selectedAlign" :justify="selectedJustify">
+        <vue-cell-ex v-for="cell in cells"></vue-cell-ex>
+      </vue-grid>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-grd@0.9.0/dist/vue-grd.js"></script>
+    <script>
+      const { VueGrid, VueCell } = VueGrd;
+
+      Vue.component('vue-cell-ex', {
+        components: {
+          VueCell
+        },
+        template: `
+          <vue-cell
+            :width="selectedWidth"
+            style="padding: 16px; border: dashed 1px #999;"
+            contenteditable>
+            &lt;vue-cell
+            <label>
+              width=<select @change="onChange">
+                <option v-for="width in widths" :value="width">{{ width }}</option>
+              </select>
+            </label>&gt;
+            <p>(click to edit)</p>
+          </vue-cell>
+        `,
+        data() {
+          return {
+            selectedWidth: 'fill',
+            widths: ['fill', '1of12', '2of12','3of12', '4of12', '5of12', '6of12', '7of12', '8of12', '9of12', '10of12', '11of12', '12of12']
+          };
+        },
+        methods: {
+          onChange(e) {
+            this.selectedWidth = e.target.value;
+          }
+        }
+      });
+
+      const app = new Vue({
+        el: '#app',
+        components: {
+          VueGrid,
+          VueCell
+        },
+        data() {
+          return {
+            selectedAlign: 'top',
+            selectedJustify: 'start',
+            aligns: ['top', 'middle', 'bottom', 'stretch', 'baseline'],
+            justifies: ['start', 'center', 'end', 'between', 'around'],
+            cells: [null, null]
+          };
+        },
+        methods: {
+          onChangeAlign(e) {
+            this.selectedAlign = e.target.value;
+          },
+          onChangeJustify(e) {
+            this.selectedJustify = e.target.value;
+          },
+          onClickAdd() {
+            this.cells.push(null);
+          },
+          onClickRemove() {
+            this.cells.pop();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
