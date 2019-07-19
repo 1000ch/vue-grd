@@ -1,13 +1,13 @@
 # vue-grd
 
-> Vue port of [grd, a CSS grid framework using flexbox](https://github.com/1000ch/grd).
+> Simple, Light-weight and Flexible Vue.js component for grid layout. Vue.js port of [grd](https://github.com/1000ch/grd).
 
 [![devDependency Status](https://david-dm.org/1000ch/vue-grd/dev-status.svg)](https://david-dm.org/1000ch/vue-grd?type=dev)
 
 ## Install
 
-```bash
-$ npm install --save vue-grd
+```sh
+npm install --save vue-grd
 ```
 
 ## Usage
