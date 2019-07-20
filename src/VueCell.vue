@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .VueCell {
   box-sizing: border-box;
   flex-shrink: 0;
