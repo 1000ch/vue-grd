@@ -1,6 +1,9 @@
 <template>
-  <div class="VueGrid" :class="[computedAlign, computedJustify]">
-    <slot></slot>
+  <div
+    class="VueGrid"
+    :class="[computedAlign, computedJustify]"
+  >
+    <slot />
   </div>
 </template>
 

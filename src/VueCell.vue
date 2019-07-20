@@ -1,6 +1,9 @@
 <template>
-  <div class="VueCell" :class="computedWidth">
-    <slot></slot>
+  <div
+    class="VueCell"
+    :class="computedWidth"
+  >
+    <slot />
   </div>
 </template>
 
