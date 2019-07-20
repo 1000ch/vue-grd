@@ -11,6 +11,7 @@
   "browser": "dist/vue-grd.js",
   "lint-staged": {
     "*.{vue|js}": [
+      "eslint --fix",
       "prettier --write",
       "git add"
     ]
@@ -32,6 +33,8 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-vue": "^5.2.3",
     "husky": "^3.0.0",
     "lint-staged": "^9.0.0",
     "prettier": "^1.0.0",
