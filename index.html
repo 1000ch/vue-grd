@@ -5,8 +5,9 @@
     <title>&lt;vue-grd&gt;: Simple, Light-weight and Flexible Vue.js component for grid layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github.min.css">
     <style>
-      body {
+      body, code {
         font-family: menlo, monospace;
         font-size: 16px;
       }
@@ -26,7 +27,7 @@
       <a class="github-button" href="https://github.com/1000ch/vue-grd" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 1000ch/vue-grd on GitHub">Star</a>
       <!-- Place this tag where you want the button to render. -->
       <a class="github-button" href="https://github.com/1000ch" data-size="large" data-show-count="true" aria-label="Follow @1000ch on GitHub">Follow @1000ch</a>
-      <h2>Demo</h2>
+      <h2>Live Demo</h2>
       <div style="padding-bottom: 16px;">
         &lt;vue-grid
         <label>
@@ -48,6 +49,28 @@
         <button @click="onClickAdd">Add a &lt;vue-cell&gt;</button>
         <button @click="onClickRemove">Remove a &lt;vue-cell&gt;</button>
       </div>
+      <h2>Install</h2>
+      <pre><code class="bash">npm install vue-grd</code></pre>
+      <h2>Usage</h2>
+      <p>You can use <code>&lt;vue-grid&gt;</code> and <code>&lt;vue-cell&gt;</code> components after importing and registering <code>VueGrid</code> and <code>VueCell</code>.</p>
+      <pre><code class="html">&lt;template&gt;
+  &lt;vue-grid align=&quot;stretch&quot; justify=&quot;start&quot;&gt;
+    &lt;vue-cell width=&quot;fill&quot;>fill&lt;/vue-cell&gt;
+    &lt;vue-cell width=&quot;3of12&quot;>3of12&lt;/vue-cell&gt;
+    &lt;vue-cell width=&quot;3of12&quot;>3of12&lt;/vue-cell&gt;
+  &lt;/vue-grid&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { VueGrid, VueCell } from 'vue-grd';
+
+export default {
+  components: {
+    VueGrid,
+    VueCell
+  }
+};
+&lt;/script&gt;</code></pre>
       <h2>License</h2>
       <p><a href="https://1000ch.mit-license.org" rel="nofollow">MIT</a> © <a href="https://github.com/1000ch">Shogo Sensui</a></p>
     </div>
@@ -121,5 +144,7 @@
     </script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/highlight.pack.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
