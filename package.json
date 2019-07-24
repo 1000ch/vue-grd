@@ -44,6 +44,10 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-vue": "^5.0.0",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.0.0"
   }
 }
