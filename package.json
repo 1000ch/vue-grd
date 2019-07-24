@@ -1,6 +1,6 @@
 {
   "name": "vue-grd",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Simple, Light-weight and Flexible Vue.js component for grid layout.",
   "scripts": {
     "prepublishOnly": "npm run build",
