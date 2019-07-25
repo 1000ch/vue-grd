@@ -31,14 +31,14 @@ type WidthValue =
 
 export interface VueGrdOptions {}
 
-export interface VueGrid {
+export class VueGrid {
   align: AlignValue;
   justify: JustifyValue;
   readonly computedAlign: string;
   readonly computedJustify: string;
 }
 
-export interface VueCell {
+export class VueCell {
   width: WidthValue;
   readonly computedWidth: string;
 }
