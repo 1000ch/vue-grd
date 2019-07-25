@@ -2,6 +2,9 @@
 
 > Simple, Light-weight and Flexible Vue.js component for grid layout. Vue.js port of [grd](https://github.com/1000ch/grd).
 
+[![Build Status](https://travis-ci.org/1000ch/vue-grd.svg?branch=master)](https://travis-ci.org/1000ch/vue-grd)
+[![NPM version](https://badge.fury.io/js/vue-grd.svg)](http://badge.fury.io/js/vue-grd)
+[![Dependency Status](https://david-dm.org/1000ch/vue-grd.svg)](https://david-dm.org/1000ch/vue-grd)
 [![devDependency Status](https://david-dm.org/1000ch/vue-grd/dev-status.svg)](https://david-dm.org/1000ch/vue-grd?type=dev)
 
 ## Install
