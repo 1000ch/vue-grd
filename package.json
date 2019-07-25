@@ -4,6 +4,7 @@
   "description": "Simple, Light-weight and Flexible Vue.js component for grid layout.",
   "scripts": {
     "prepublishOnly": "npm run build",
+    "test": "jest",
     "build": "rollup -c rollup.config.js"
   },
   "main": "dist/vue-grd.common.js",
@@ -15,6 +16,17 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "jest": {
+    "testRegex": "/test/.+\\.spec\\.js$",
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(js)$": "babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -32,10 +44,13 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^3.0.0",
+    "jest": "^24.8.0",
     "lint-staged": "^9.0.0",
     "prettier": "^1.0.0",
     "rollup": "^1.0.0",
@@ -45,6 +60,7 @@
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-vue": "^5.0.0",
     "vue": "^2.6.10",
+    "vue-jest": "github:vuejs/vue-jest",
     "vue-template-compiler": "^2.6.0"
   },
   "peerDependencies": {
