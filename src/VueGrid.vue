@@ -2,6 +2,7 @@
   <div
     class="VueGrid"
     :class="[computedAlign, computedJustify]"
+    :is="tag"
   >
     <slot />
   </div>
@@ -27,6 +28,10 @@ const justifyValues = [
 export default {
   name: 'VueGrid',
   props: {
+    tag: {
+      default: 'div',
+      type: String
+    },
     align: {
       default: 'stretch',
       type: String,
