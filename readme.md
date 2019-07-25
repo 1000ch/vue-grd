@@ -50,6 +50,10 @@ Vue.component('vue-cell', VueCell);
 
 ### `<vue-grid>` modifiers
 
+| `tag` | description |
+|---|---|
+| [HTMLElement name](https://html.spec.whatwg.org/multipage/#toc-semantics) | Specify grid's tag name |
+
 | `align` | description |
 |---|---|
 | `top` | Pull items to top |
@@ -67,6 +71,10 @@ Vue.component('vue-cell', VueCell);
 | `around` | Add spaces around items |
 
 ### `<vue-cell>` modifiers
+
+| `tag` | description |
+|---|---|
+| [HTMLElement name](https://html.spec.whatwg.org/multipage/#toc-semantics) | Specify cell's tag name |
 
 | `width` | description |
 |---|---|
