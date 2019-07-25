@@ -1,10 +1,11 @@
 <template>
-  <div
+  <component
     class="VueCell"
     :class="computedWidth"
+    :is="tag"
   >
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
@@ -27,6 +28,10 @@ const widthValues = [
 export default {
   name: 'VueCell',
   props: {
+    tag: {
+      default: 'div',
+      type: String
+    },
     width: {
       default: 'fill',
       type: String,
