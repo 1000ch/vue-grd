@@ -32,6 +32,7 @@ type WidthValue =
 export interface VueGrdOptions {}
 
 export class VueGrid {
+  tag: string;
   align: AlignValue;
   justify: JustifyValue;
   readonly computedAlign: string;
@@ -39,6 +40,7 @@ export class VueGrid {
 }
 
 export class VueCell {
+  tag: string;
   width: WidthValue;
   readonly computedWidth: string;
 }
