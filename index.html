@@ -87,7 +87,7 @@ export default {
             style="padding: 16px; border: dashed 1px #999;">
             &lt;vue-cell
             <label>
-              width=<select @change="onChange">
+              width=<select ref="select" @change="onChange">
                 <option v-for="width in widths" :value="width">{{ width }}</option>
               </select>
             </label>&gt;
@@ -97,7 +97,7 @@ export default {
         `,
         data() {
           return {
-            selectedWidth: 'fill',
+            selectedWidth: '3of12',
             widths: ['fill', '1of12', '2of12','3of12', '4of12', '5of12', '6of12', '7of12', '8of12', '9of12', '10of12', '11of12', '12of12']
           };
         },
@@ -105,6 +105,9 @@ export default {
           onChange(e) {
             this.selectedWidth = e.target.value;
           }
+        },
+        mounted() {
+          this.$refs.select.selectedIndex = 3;
         }
       });
 
