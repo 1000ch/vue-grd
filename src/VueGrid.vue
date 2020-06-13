@@ -9,21 +9,9 @@
 </template>
 
 <script>
-const alignValues = [
-  'top',
-  'middle',
-  'bottom',
-  'stretch',
-  'baseline'
-];
+const alignValues = ['top', 'middle', 'bottom', 'stretch', 'baseline'];
 
-const justifyValues = [
-  'start',
-  'center',
-  'end',
-  'between',
-  'around'
-];
+const justifyValues = ['start', 'center', 'end', 'between', 'around'];
 
 export default {
   name: 'VueGrid',
@@ -35,12 +23,12 @@ export default {
     align: {
       default: 'stretch',
       type: String,
-      validator: value => alignValues.includes(value)
+      validator: (value) => alignValues.includes(value)
     },
     justify: {
       default: 'start',
       type: String,
-      validator: value => justifyValues.includes(value)
+      validator: (value) => justifyValues.includes(value)
     }
   },
   computed: {

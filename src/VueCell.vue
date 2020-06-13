@@ -1,9 +1,5 @@
 <template>
-  <component
-    class="VueCell"
-    :class="computedWidth"
-    :is="tag"
-  >
+  <component class="VueCell" :class="computedWidth" :is="tag">
     <slot />
   </component>
 </template>
@@ -35,7 +31,7 @@ export default {
     width: {
       default: 'fill',
       type: String,
-      validator: value => widthValues.includes(value)
+      validator: (value) => widthValues.includes(value)
     }
   },
   computed: {
