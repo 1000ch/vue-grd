@@ -4,6 +4,7 @@
   "description": "Simple, Light-weight and Flexible Vue.js component for grid layout.",
   "scripts": {
     "prepublish": "npm run build",
+    "pretest": "eslint src --ext .js",
     "test": "jest",
     "build": "rollup -c rollup.config.js"
   },
@@ -47,12 +48,12 @@
     "@vue/test-utils": "^1.0.0-beta.30",
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.1.2",
+    "eslint": "^7.2.0",
+    "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.0.10",
     "jest": "^26.0.0",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.0",
     "rollup": "^2.16.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
