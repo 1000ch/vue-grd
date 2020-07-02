@@ -43,9 +43,9 @@
   },
   "homepage": "https://github.com/1000ch/vue-grd#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
     "eslint": "^7.2.0",
@@ -61,7 +61,7 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-vue": "^5.1.9",
     "vue": "^2.6.11",
-    "vue-jest": "github:vuejs/vue-jest",
+    "vue-jest": "^3.0.6",
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
