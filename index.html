@@ -2,21 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>&lt;vue-grd&gt;: Simple, Light-weight and Flexible Vue.js component for grid layout</title>
+    <title>vue-grd: Simple, Light-weight and Flexible Vue.js component for grid layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/github.min.css">
     <link rel="stylesheet" href="https://1000ch.github.io/gh-pages.css/gh-pages.css">
     </style>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://unpkg.com/github-corner@2.0.2"></script>
-    <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script type="module" src="index.js"></script>
     <script type="module">
+      import XMarked from 'https://unpkg.com/x-marked';
+      import FluidIframe from 'https://unpkg.com/fluid-iframe';
+
+      customElements.define('x-marked', XMarked);
+      customElements.define('fluid-iframe', FluidIframe);
+
       window.addEventListener('load', () => {
-        document.querySelectorAll('pre code').forEach(block => {
-          hljs.highlightBlock(block);
-        });
+        const xmarked = document.querySelector('x-marked');
+        const div = document.querySelector('div');
+        const h2 = xmarked.shadowRoot.querySelector('h2');
+        xmarked.shadowRoot.querySelector('div').insertBefore(div, h2);
       });
     </script>
   </head>
@@ -24,48 +28,31 @@
     <github-corner>
       <a href="https://github.com/1000ch/vue-grd">GitHub</a>
     </github-corner>
-    <div id="app" class="container">
-      <h1><a href="https://github.com/1000ch/vue-grd">&lt;vue-grd&gt;</a></h1>
-      <p>Simple, Light-weight and Flexible Vue.js component for grid layout.</p>
-      <!-- Place this tag where you want the button to render. -->
-      <a class="github-button" href="https://github.com/1000ch/vue-grd" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 1000ch/vue-grd on GitHub">Star</a>
-      <!-- Place this tag where you want the button to render. -->
-      <a class="github-button" href="https://github.com/1000ch" data-size="large" data-show-count="true" aria-label="Follow @1000ch on GitHub">Follow @1000ch</a>
-      <h2>Live Demo</h2>
-      <div style="padding-bottom: 16px;">
-        &lt;vue-grid
-        <label>
-          align=<select @change="onChangeAlign">
-            <option v-for="align in aligns" :value="align">{{ align }}</option>
-          </select>
-        </label>
-        <label>
-          justify=<select @change="onChangeJustify">
-            <option v-for="justify in justifies" :value="justify">{{ justify }}</option>
-          </select>
-        </label>&gt;
-      </div>
-      <vue-grid :align="selectedAlign" :justify="selectedJustify">
-        <vue-cell-ex v-for="cell in cells"></vue-cell-ex>
-      </vue-grid>
-      <div style="padding-top: 16px;">
-        &lt;/vue-grid&gt;
-        <button @click="onClickAdd">Add a &lt;vue-cell&gt;</button>
-        <button @click="onClickRemove">Remove a &lt;vue-cell&gt;</button>
-      </div>
-      <h2>Install</h2>
-      <pre><code class="bash">npm install vue-grd</code></pre>
-      <h2>Usage</h2>
-      <p>You can use <code>&lt;vue-grid&gt;</code> and <code>&lt;vue-cell&gt;</code> components after importing and registering <code>VueGrid</code> and <code>VueCell</code>.</p>
-      <pre><code class="html">&lt;template&gt;
-  &lt;vue-grid align=&quot;stretch&quot; justify=&quot;start&quot;&gt;
-    &lt;vue-cell width=&quot;fill&quot;>fill&lt;/vue-cell&gt;
-    &lt;vue-cell width=&quot;3of12&quot;>3of12&lt;/vue-cell&gt;
-    &lt;vue-cell width=&quot;3of12&quot;>3of12&lt;/vue-cell&gt;
-  &lt;/vue-grid&gt;
-&lt;/template&gt;
+    <x-marked highlight class="container">
+# vue-grd [![Build Status](https://travis-ci.org/1000ch/vue-grd.svg?branch=master)](https://travis-ci.org/1000ch/vue-grd) [![devDependency Status](https://david-dm.org/1000ch/vue-grd/dev-status.svg)](https://david-dm.org/1000ch/vue-grd?type=dev)
 
-&lt;script&gt;
+Simple, Light-weight and Flexible Vue.js component for grid layout. Vue.js port of [grd](https://github.com/1000ch/grd).
+
+## Install
+
+```sh
+npm install --save vue-grd
+```
+
+## Usage
+
+You can use `<vue-grid>` and `<vue-cell>` components after importing and registering `VueGrid` and `VueCell`.
+
+```html
+<template>
+  <vue-grid align="stretch" justify="start">
+    <vue-cell width="fill">fill</vue-cell>
+    <vue-cell width="3of12">3of12</vue-cell>
+    <vue-cell width="3of12">3of12</vue-cell>
+  </vue-grid>
+</template>
+
+<script>
 import { VueGrid, VueCell } from 'vue-grd';
 
 export default {
@@ -74,9 +61,67 @@ export default {
     VueCell
   }
 };
-&lt;/script&gt;</code></pre>
-      <h2>License</h2>
-      <p><a href="https://1000ch.mit-license.org" rel="nofollow">MIT</a> © <a href="https://github.com/1000ch">Shogo Sensui</a></p>
-    </div>
+</script>
+```
+
+You can also register them as global components.
+
+```javascript
+import Vue from 'vue';
+import { VueGrid, VueCell } from 'vue-grd';
+
+Vue.component('vue-grid', VueGrid);
+Vue.component('vue-cell', VueCell);
+```
+
+### `<vue-grid>` modifiers
+
+| `tag` | description |
+|---|---|
+| [HTMLElement name](https://html.spec.whatwg.org/multipage/#toc-semantics) | Specify grid's tag name |
+
+| `align` | description |
+|---|---|
+| `top` | Pull items to top |
+| `middle` |  Pull items to middle |
+| `bottom` |  Pull items to bottom |
+| `stretch` | Stretch items |
+| `baseline` |  Pull items to baseline |
+
+| `justify` | description |
+|---|---|
+| `start` | Layout items to start |
+| `center` | Layout items to center |
+| `end` | Layout items to end |
+| `between` | Add spaces between items |
+| `around` | Add spaces around items |
+
+### `<vue-cell>` modifiers
+
+| `tag` | description |
+|---|---|
+| [HTMLElement name](https://html.spec.whatwg.org/multipage/#toc-semantics) | Specify cell's tag name |
+
+| `width` | description |
+|---|---|
+| `fill` | Set item width to left |
+| `1of12` | Set item width to 8.3% |
+| `2of12` | Set item width to 16.7% |
+| `3of12` | Set item width to 25% |
+| `4of12` | Set item width to 33% |
+| `5of12` | Set item width to 41.7% |
+| `6of12` | Set item width to 50% |
+| `7of12` | Set item width to 58.3% |
+| `8of12` | Set item width to 66.7% |
+| `9of12` | Set item width to 75% |
+| `10of12` | Set item width to 83.3% |
+| `11of12` | Set item width to 91.7% |
+| `12of12` | Set item width to 100% |
+
+## License
+
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
+    </x-marked>
+    <fluid-iframe src="./demo/"></fluid-iframe>
   </body>
 </html>

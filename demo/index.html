@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue-grd demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="https://1000ch.github.io/gh-pages.css/gh-pages.css">
+    </style>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>demo</h1>
+      <div style="padding-bottom: 16px;">
+        &lt;vue-grid
+        <label>
+          align=<select @change="onChangeAlign">
+            <option v-for="align in aligns" :value="align">{{ align }}</option>
+          </select>
+        </label>
+        <label>
+          justify=<select @change="onChangeJustify">
+            <option v-for="justify in justifies" :value="justify">{{ justify }}</option>
+          </select>
+        </label>&gt;
+      </div>
+      <vue-grid :align="selectedAlign" :justify="selectedJustify">
+        <vue-cell-ex v-for="cell in cells"></vue-cell-ex>
+      </vue-grid>
+      <div style="padding-top: 16px;">
+        &lt;/vue-grid&gt;
+        <button @click="onClickAdd">Add a &lt;vue-cell&gt;</button>
+        <button @click="onClickRemove">Remove a &lt;vue-cell&gt;</button>
+      </div>
+    </div>
+  </body>
+</html>
