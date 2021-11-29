@@ -1,6 +1,6 @@
 {
   "name": "vue-grd",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Simple, Light-weight and Flexible Vue.js component for grid layout.",
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks",
