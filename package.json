@@ -3,6 +3,7 @@
   "version": "1.2.2",
   "description": "Simple, Light-weight and Flexible Vue.js component for grid layout.",
   "scripts": {
+    "prepare": "git config --local core.hooksPath .githooks",
     "prepublish": "npm run build",
     "pretest": "eslint src --ext .js",
     "test": "jest",
@@ -11,14 +12,8 @@
   "main": "dist/vue-grd.common.js",
   "module": "dist/vue-grd.esm.js",
   "browser": "dist/vue-grd.js",
-  "lint-staged": {
-    "*.{vue|js}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
   "jest": {
+    "testEnvironment": "jsdom",
     "testRegex": "/test/.+\\.spec\\.js$",
     "moduleFileExtensions": [
       "js",
@@ -43,26 +38,24 @@
   },
   "homepage": "https://github.com/1000ch/vue-grd#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.7.7",
-    "@vue/test-utils": "^1.0.0-beta.30",
+    "@babel/preset-env": "^7.16.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@vue/test-utils": "^1.3.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^26.0.0",
-    "babel-loader": "^8.0.0",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
     "eslint": "^7.2.0",
     "eslint-plugin-vue": "^6.2.2",
-    "husky": "^4.0.10",
-    "jest": "^26.0.0",
-    "lint-staged": "^10.0.7",
-    "prettier": "^2.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.5.0",
     "rollup": "^2.16.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "^5.1.9",
-    "vue": "^2.6.11",
-    "vue-jest": "^3.0.6",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^2.6.14",
+    "vue-jest": "^3.0.7",
+    "vue-template-compiler": "^2.6.14"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
